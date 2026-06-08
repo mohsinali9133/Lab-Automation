@@ -1,6 +1,6 @@
 <?php
 session_start();
-include "includes/config.php";
+include "../uoi/Lab-Automation/uoi/includes/config.php";
 
 if(isset($_POST['login'])){
 
