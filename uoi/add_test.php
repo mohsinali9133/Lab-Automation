@@ -1,5 +1,5 @@
 <?php
-include "includes/config.php";
+include "config.php";
 include "includes/header.php";
 
 if(isset($_POST['save'])){
@@ -12,7 +12,7 @@ if(isset($_POST['save'])){
     $remarks = $_POST['remarks'];
     $date = $_POST['testing_date'];
 
-    mysqli_query($conn,"INSERT INTO testing_records(
+    mysqli_query($con,"INSERT INTO testing_records(
         testing_id,
         product_id,
         test_type,
@@ -35,7 +35,7 @@ if(isset($_POST['save'])){
 }
 
 // Fetch all available products from the database for the dropdown
-$product_query = mysqli_query($conn, "SELECT product_id, product_name FROM products");
+$product_query = mysqli_query($con, "SELECT product_id, product_name FROM products");
 ?>
 
 <div class="container-fluid">

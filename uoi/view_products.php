@@ -1,5 +1,6 @@
 <?php
-include "includes/config.php";
+
+include "config.php";
 include "includes/header.php";
 ?>
 
@@ -58,7 +59,7 @@ include "includes/header.php";
                         <tbody id="productsTableBody">
 
                             <?php
-                            $query = mysqli_query($conn,"SELECT * FROM products");
+                            $query = mysqli_query($con,"SELECT * FROM products");
 
                             while($row=mysqli_fetch_array($query)){
                             ?>

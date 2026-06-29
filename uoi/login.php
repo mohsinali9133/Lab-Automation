@@ -1,13 +1,13 @@
 <?php
 session_start();
-include "../uoi/Lab-Automation/uoi/includes/config.php";
+include "config.php";
 
 if(isset($_POST['login'])){
 
     $username = $_POST['username'];
     $password = $_POST['password'];
 
-    $query = mysqli_query($conn,"SELECT * FROM users WHERE username='$username' AND password='$password'");
+    $query = mysqli_query($con,"SELECT * FROM users WHERE username='$username' AND password='$password'");
 
     if(mysqli_num_rows($query)>0){
 

@@ -1,5 +1,5 @@
 <?php
-include "includes/config.php";
+include "config.php";
 include "includes/header.php";
 ?>
 
@@ -58,7 +58,7 @@ include "includes/header.php";
                         <tbody id="testingTableBody">
 
                             <?php
-                            $query = mysqli_query($conn,"SELECT * FROM testing_records");
+                            $query = mysqli_query($con,"SELECT * FROM testing_records");
 
                             while($row=mysqli_fetch_array($query)){
                             ?>

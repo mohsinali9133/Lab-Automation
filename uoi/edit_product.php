@@ -1,10 +1,10 @@
 <?php
-include "includes/config.php";
+include "config.php";
 include "includes/header.php";
 
 $id = $_GET['id'];
 
-$query = mysqli_query($conn,"SELECT * FROM products WHERE id='$id'");
+$query = mysqli_query($con,"SELECT * FROM products WHERE id='$id'");
 
 $row = mysqli_fetch_array($query);
 
@@ -14,7 +14,7 @@ if(isset($_POST['update'])){
     $type = $_POST['product_type'];
     $status = $_POST['status'];
 
-    mysqli_query($conn,"UPDATE products SET
+    mysqli_query($con,"UPDATE products SET
 
     product_name='$name',
     product_type='$type',

@@ -1,5 +1,5 @@
 <?php
-include "includes/config.php";
+include "config.php";
 include "includes/header.php";
 
 if(isset($_POST['save'])){
@@ -11,7 +11,7 @@ if(isset($_POST['save'])){
     $mdate = $_POST['manufacturing_date'];
     $status = $_POST['status'];
 
-    mysqli_query($conn,"INSERT INTO products(
+    mysqli_query($con,"INSERT INTO products(
     
     product_id,
     product_name,

@@ -1,9 +1,12 @@
 <?php
-include "includes/config.php";
+
+
+
+include "config.php";
 
 $id = $_GET['id'];
 
-mysqli_query($conn,"DELETE FROM products WHERE id='$id'");
+mysqli_query($con,"DELETE FROM products WHERE id='$id'");
 
 header("location:view_products.php");
 ?>

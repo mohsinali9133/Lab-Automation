@@ -1,6 +1,6 @@
 <?php
 session_start();
-include "includes/config.php";
+include "config.php";
 
 if (!isset($_SESSION['username'])) {
     header("location:login.php");
@@ -8,9 +8,9 @@ if (!isset($_SESSION['username'])) {
 
 include "includes/header.php";
 
-$product = mysqli_num_rows(mysqli_query($conn, "SELECT * FROM products"));
-$passed = mysqli_num_rows(mysqli_query($conn, "SELECT * FROM testing_records WHERE test_result='Passed'"));
-$failed = mysqli_num_rows(mysqli_query($conn, "SELECT * FROM testing_records WHERE test_result='Failed'"));
+$product = mysqli_num_rows(mysqli_query($con, "SELECT * FROM products"));
+$passed = mysqli_num_rows(mysqli_query($con, "SELECT * FROM testing_records WHERE test_result='Passed'"));
+$failed = mysqli_num_rows(mysqli_query($con, "SELECT * FROM testing_records WHERE test_result='Failed'"));
 ?>
 
 <div class="container-fluid dashboard-wrapper">
@@ -70,7 +70,7 @@ $failed = mysqli_num_rows(mysqli_query($conn, "SELECT * FROM testing_records WHE
 
                 <?php
                 $totalQuery = mysqli_query(
-                    $conn,
+                    $con,
                     "SELECT COUNT(*) as total FROM testing_records"
                 );
 
@@ -79,7 +79,7 @@ $failed = mysqli_num_rows(mysqli_query($conn, "SELECT * FROM testing_records WHE
 
 
                 $passQuery = mysqli_query(
-                    $conn,
+                    $con,
                     "SELECT COUNT(*) as passed
 FROM testing_records
 WHERE LOWER(test_result)='passed'"
@@ -90,7 +90,7 @@ WHERE LOWER(test_result)='passed'"
 
 
                 $failQuery = mysqli_query(
-                    $conn,
+                    $con,
                     "SELECT COUNT(*) as failed
 FROM testing_records
 WHERE LOWER(test_result)='failed'"
